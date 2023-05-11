@@ -3,7 +3,7 @@ class Solution:
         low = float("inf")
         result = 0
         for i in range(len(prices)):
-            low = min(low,prices[i])
-            result= max(result,prices[i]-low)
+            low = min (low, prices[i])
+            result = max (result, prices[i]-low)
         return result
         
