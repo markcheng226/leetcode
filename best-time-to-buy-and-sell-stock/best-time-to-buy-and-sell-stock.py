@@ -4,5 +4,6 @@ class Solution:
         result = 0
         for i in range(len(prices)):
             low = min(low,prices[i])
-            result = max(result, prices[i]-low)
+            result= max(result,prices[i]-low)
         return result
+        
