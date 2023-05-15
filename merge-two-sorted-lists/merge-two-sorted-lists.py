@@ -8,7 +8,7 @@ class Solution:
         res = ListNode()
         cur = res
 
-        while(list1 != None and list2 != None):
+        while (list1 != None and list2 != None):
             if list1.val <= list2.val:
                 cur.next = list1
                 list1 = list1.next
@@ -18,3 +18,4 @@ class Solution:
             cur = cur.next
         cur.next = list1 or list2
         return res.next
+        
