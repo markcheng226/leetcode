@@ -12,10 +12,12 @@ class Solution:
                     if c == ")":
                         if temp != "(":
                             return False
-                    elif c == "}":
+                    if c == "}":
                         if temp != "{":
                             return False
-                    elif c == "]":
+                    if c == "]":
                         if temp != "[":
                             return False
-        return True if len(stack) == 0 else False
+        return True if len(stack)==0 else False
+
+        
