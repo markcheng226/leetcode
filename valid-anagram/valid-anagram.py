@@ -1,12 +1,12 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        record = [0]*26
+        result = [0] * 26
         for i in s:
-            record[ord(i)-ord("a")] +=1
+            result[ord(i)-ord("a")] +=1
         for i in t:
-            record[ord(i)-ord("a")] -=1
-        for i in range(len(record)):
-            if record[i] != 0:
-                return False
+            result[ord(i)-ord("a")] -=1
+        for i in range(len(result)):
+            if result[i] != 0:
+                return False 
         return True
         
