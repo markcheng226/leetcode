@@ -8,5 +8,5 @@ class Solution:
             temp = ''.join(sorted(s))
             result[temp] = result.get(temp,[]) + [s]
         return result.values()
-
+            
         
