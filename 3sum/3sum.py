@@ -13,11 +13,11 @@ class Solution:
             right = len(nums)-1
 
             while right > left:
-                sums_= nums[i] + nums[left] + nums[right]
+                sums= nums[i] + nums[left] + nums[right]
 
-                if sums_ < 0:
+                if sums < 0:
                     left +=1
-                elif sums_ > 0:
+                elif sums > 0:
                     right -=1
                 else:
                     result.append([nums[i],nums[left],nums[right]])
