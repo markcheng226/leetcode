@@ -4,12 +4,11 @@ class Solution:
         cur_min = float("inf")
         
         while l < r:
-            mid = (l+r)//2
+            mid = (l + r )//2
             cur_min = min(cur_min,nums[mid])
-
+            
             if nums[mid] > nums[r]:
                 l = mid +1
             else:
                 r = mid -1
-
-        return min(cur_min, nums[l])        
+        return min(cur_min, nums[l])
