@@ -13,17 +13,16 @@ class Solution:
             return None
         
         oldtoNew={}
-
+        
         def dfs(node):
             if node in oldtoNew:
                 return oldtoNew[node]
-            
+
             copy = Node(node.val)
-            
             oldtoNew[node] = copy
 
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
-            return copy
-        return dfs(node)
 
+            return copy
+        return dfs(node)       
