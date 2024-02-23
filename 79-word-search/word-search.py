@@ -13,6 +13,11 @@ class Solution:
             res = (dfs(r+1,c,i+1) or dfs(r-1,c,i+1) or dfs(r,c+1,i+1) or dfs(r,c-1,i+1))
             path.remove((r,c))
             return res
+
+        count = defaultdict(int,sum(map(Counter,board),Counter()))
+        if count[word[0]] > count[word[-1]]:
+            word = word[::-1]
+
         for r in range(ROWS):
             for c in range(COLS):
                 if dfs(r,c,0):
