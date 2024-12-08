@@ -8,9 +8,9 @@ class Solution:
             counts[num] -=1
             totalsum -= num
 
-            if totalsum % 2 == 0 and counts[totalsum//2] > 0:
+            if totalsum % 2 == 0 and counts[totalsum//2]>0:
                 outlier = max(outlier,num)
-
+            
             counts[num] +=1
             totalsum += num
         return outlier
