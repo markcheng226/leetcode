@@ -1,26 +1,44 @@
-from collections import OrderedDict
+class Node:
+    def __init__(self,key,val):
+        self.key, self.val = key, val
+        self.prev = self.next = None
 
 class LRUCache:
+
     def __init__(self, capacity: int):
-        self.cache = OrderedDict()  # 使用有序字典
-        self.capacity = capacity   # 设置缓存容量
+        self.cap = capacity
+        self.cache = {}
+        self.left,self.right = Node(0,0),Node(0,0)
+        self.left.next, self.right.prev = self.right,self.left
+    
+    def remove(self,node):
+        prev,nxt = node.prev,node.next
+        prev.next,nxt.prev = nxt,prev
+    
+    def add(self,node):
+        prev,nxt = self.right.prev, self.right
+        prev.next = nxt.prev = node
+        node.next,node.prev = nxt,prev
+        
 
     def get(self, key: int) -> int:
-        if key not in self.cache:  # 如果不存在，返回 -1
-            return -1
-        # 如果存在，先将其移动到末尾 (标记为最近使用)
-        self.cache.move_to_end(key)
-        return self.cache[key]
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.add(self.cache[key])
+            return self.cache[key].val
+        return -1
+        
 
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
-            # 如果键存在，更新值并移动到末尾
-            self.cache.move_to_end(key)
-        self.cache[key] = value
-        # 如果缓存超过容量，弹出最早插入的元素
-        if len(self.cache) > self.capacity:
-            self.cache.popitem(last=False)
-        
+            self.remove(self.cache[key])
+        self.cache[key] = Node(key,value)
+        self.add(self.cache[key])
+
+        if len(self.cache) > self.cap:
+            lru = self.left.next
+            self.remove(lru)
+            del self.cache[lru.key]
 
 
 # Your LRUCache object will be instantiated and called as such:
