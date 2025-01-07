@@ -6,7 +6,7 @@ class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> str:
         # 1. 创建用户访问记录字典，按时间戳排序
         G = defaultdict(list)
-        for (time, user, web) in sorted(zip(timestamp, username, website)):
+        for (t, user, web) in sorted(zip(timestamp, username, website)):
             G[user].append(web)
         
         # 2. 统计三元组模式的出现次数
