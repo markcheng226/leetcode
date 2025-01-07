@@ -7,9 +7,11 @@ class Solution:
         for user, websites in G.items():
             for pattern in set(combinations(websites, 3)):
                 scores[pattern] += 1
-        max_pattern, max_cnt = '', 0
-        for pattern, cnt in scores.items():
-            if cnt > max_cnt or (cnt == max_cnt and pattern < max_pattern):
+        max_pattern, max_count = '', 0
+        for pattern, count in scores.items():
+            if count > max_count or (count == max_count and pattern < max_pattern):
                 max_pattern = pattern
-                max_cnt = cnt
+                max_count = count
         return max_pattern
+
+        
