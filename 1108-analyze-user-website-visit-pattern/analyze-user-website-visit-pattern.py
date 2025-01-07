@@ -1,9 +1,5 @@
-
-
-
-
 class Solution:
-    def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> str:
+    def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
         G = defaultdict(list)
         for (time, user, web) in sorted(zip(timestamp, username, website)):
             G[user].append(web)
