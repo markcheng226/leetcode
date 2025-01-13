@@ -5,6 +5,7 @@ class Solution:
         for i in range(len(nums)):
             diff = target - nums[i]
             if diff in hashmap:
-                return[i,hashmap[diff]]
+                return(i,hashmap[diff])
             else:
                 hashmap[nums[i]] = i
+        
