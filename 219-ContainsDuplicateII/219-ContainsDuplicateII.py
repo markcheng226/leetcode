@@ -3,12 +3,12 @@ class Solution:
         window = set()
         l=0
 
-        for r in range(len(nums)):
-            if r-l > k:
+        for i in range(len(nums)):
+            if i-l > k:
                 window.remove(nums[l])
                 l+=1
-            if nums[r] in window:
+            if nums[i] in window:
                 return True
-            window.add(nums[r])
+            window.add(nums[i])
         return False
         
