@@ -6,7 +6,7 @@ class Solution:
 
         def bfs(r,c):
             q = deque()
-            grid[r][c] == "0"
+            grid[r][c] = "0"
             q.append((r,c))
 
             while q:
