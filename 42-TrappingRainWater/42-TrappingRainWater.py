@@ -6,7 +6,7 @@ class Solution:
 
         while l < r:
             if leftmax < rightmax:
-                l +=1
+                l+=1
                 leftmax = max(leftmax,height[l])
                 res += leftmax - height[l]
             else:
