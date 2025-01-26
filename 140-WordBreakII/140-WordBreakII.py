@@ -1,8 +1,9 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         wordDict = set(wordDict)
-        cur = []
+
         res = []
+        cur = []
 
         def backtrack(i):
             if i == len(s):
@@ -17,5 +18,3 @@ class Solution:
                     cur.pop()
         backtrack(0)
         return res
-
-                
