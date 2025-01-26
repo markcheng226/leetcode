@@ -6,8 +6,8 @@ class Solution:
 
         for num in nums:
             count[num] -=1
-            totalsum -= num
-            if totalsum % 2==0 and count[totalsum//2]>0:
+            totalsum -=num
+            if totalsum % 2 == 0 and count[totalsum//2] >0 :
                 res = max(res,num)
             count[num] +=1
             totalsum +=num
