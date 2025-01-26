@@ -1,11 +1,10 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         wordDict = set(wordDict)
-
         res = []
         cur = []
 
-        def backtrack(i):
+        def backstack(i):
             if i == len(s):
                 res.append(" ".join(cur))
                 return
@@ -14,7 +13,7 @@ class Solution:
                 w = s[i:j+1]
                 if w in wordDict:
                     cur.append(w)
-                    backtrack(j+1)
+                    backstack(j+1)
                     cur.pop()
-        backtrack(0)
+        backstack(0)
         return res
