@@ -10,9 +10,8 @@ class Solution:
                 return
                 
             for j in range(i,len(s)):
-                w = s[i:j+1]
-                if w in wordDict:
-                    cur.append(w)
+                if s[i:j+1] in wordDict:
+                    cur.append(s[i:j+1])
                     backtrack(j+1)
                     cur.pop()
         backtrack(0)
