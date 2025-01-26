@@ -1,13 +1,12 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-
-        rows,cols = len(board),len(board[0])
+        rows, cols = len(board),len(board[0])
 
         def dfs(r,c,i):
             if i == len(word):
                 return True
             
-            if (r<0 or c<0 or r>=rows or c>=cols or word[i] != board[r][c] or board[r][c] == "#"):
+            if ( r< 0 or c<0 or r>=rows or c >= cols or board[r][c] != word[i] or board[r][c] == "#"):
                 return False
             
             board[r][c] = "#"
