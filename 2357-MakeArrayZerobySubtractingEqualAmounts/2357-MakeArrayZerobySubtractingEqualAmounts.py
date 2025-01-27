@@ -4,10 +4,10 @@ class Solution:
         current = 0
         res = 0
 
-        for num in nums:
-            num -= current
-            if num > 0:
-                
-                current +=num
+        for i in range(len(nums)):
+            nums[i] -= current
+            if nums[i] > 0:
+
+                current +=nums[i]
                 res +=1
         return res
