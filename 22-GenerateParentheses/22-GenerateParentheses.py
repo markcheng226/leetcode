@@ -3,20 +3,20 @@ class Solution:
         stack = []
         res = []
 
-        def backtrack(openN,closedN):
-            if openN == closedN == n:
+        def backtrack(openN,closeN):
+            if openN == closeN == n :
                 res.append("".join(stack))
                 return
-
+            
             if openN < n:
                 stack.append("(")
-                backtrack(openN+1,closedN)
+                backtrack(openN+1,closeN)
                 stack.pop()
             
-            if closedN < openN:
+            if closeN < openN:
                 stack.append(")")
-                backtrack(openN,closedN+1)
+                backtrack(openN,closeN+1)
                 stack.pop()
-
+            
         backtrack(0,0)
         return res
