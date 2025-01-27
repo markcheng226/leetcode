@@ -14,12 +14,13 @@ class Solution:
             
             visiting.add(crs)
             for pre in preMap[crs]:
-                if not dfs(pre):
+                if not dfs(pre) :
                     return False
             visiting.remove(crs)
             preMap[crs] = []
             return True
+
         for c in range(numCourses):
-            if dfs(c) == 0:
+            if not dfs(c):
                 return False
         return True
