@@ -1,13 +1,13 @@
 class Solution:
     def minimumOperations(self, nums: List[int]) -> int:
         nums.sort()
-        count =0 
         current = 0
+        count = 0
 
-        for x in nums:
-            x -= current
+        for num in nums:
+            num -= current
 
-            if x > 0:
-                current +=x
+            if num > 0:
+                current += num
                 count +=1
         return count
