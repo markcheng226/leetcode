@@ -1,11 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        curbuy=cuysell = 0
-        nextbuy=nextsell=0
+        cur_buy = cur_sell = 0
+        next_buy = next_sell = 0
 
         for i in range(len(prices)-1,-1,-1):
-            curbuy = max(nextbuy,-prices[i]+nextsell)
-            cursell = max(nextsell,prices[i]+nextbuy)
-            nextbuy=curbuy
-            nextsell = cursell
-        return curbuy
+            cur_buy = max(next_buy,-prices[i]+next_sell)
+            cur_sell = max(next_sell,prices[i] + next_buy)
+            next_buy = cur_buy
+            next_sell = cur_sell
+        return cur_buy
