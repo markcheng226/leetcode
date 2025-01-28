@@ -1,13 +1,12 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         wordDict = set(wordDict)
-        cur = []
         res = []
+        cur = []
 
         def backtrack(i):
             if i == len(s):
                 res.append(" ".join(cur))
-                return
             
             for j in range(i,len(s)):
                 w = s[i:j+1]
