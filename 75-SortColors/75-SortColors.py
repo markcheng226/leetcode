@@ -7,7 +7,7 @@ class Solution:
         for num in nums:
             count[num] +=1
         
-        index = 0
+        index =0
 
         for i in range(3):
             while count[i]:
@@ -15,3 +15,6 @@ class Solution:
                 nums[index] = i
                 index +=1
         return nums
+            
+
+                
