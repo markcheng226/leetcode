@@ -1,18 +1,15 @@
 class Solution:
-    def rotate(self, nums, k):
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        k = k%len(nums)
+        def reverse(l,r):
+            while l < r:
+                nums[r],nums[l] = nums[l],nums[r]
+                l +=1
+                r-=1
         
-        n = len(nums)
-        d = self.gcd(n,k)
-        
-        for i in range(d):
-            temp = nums[i]
-            for j in range(n//d):
-                nums[(i-k*j)%n] = nums[(i-k*(j+1))%n]
-            nums[(i-k*j)%n] = temp
-        
-        return
-    
-    def gcd(self, a, b):
-        while b:
-            a,b = b,a%b
-        return a
+        reverse(0,len(nums)-1)
+        reverse(0,k-1)
+        reverse(k,len(nums)-1)
