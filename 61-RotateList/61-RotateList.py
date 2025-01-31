@@ -8,8 +8,7 @@ class Solution:
         if not head:
             return head
 
-        length,tail = 1, head
-
+        length, tail = 1,head
         while tail.next:
             tail = tail.next
             length +=1
@@ -19,9 +18,9 @@ class Solution:
             return head
         
         cur = head
-        for i in range(length-k-1):
+        for i in range(length-1-k):
             cur = cur.next
         newhead = cur.next
         cur.next = None
-        tail.next = head
+        tail.next= head
         return newhead
