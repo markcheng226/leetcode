@@ -3,11 +3,11 @@ class Solution:
         count = Counter(nums)  
         freq = [[] for i in range(len(nums) + 1)] 
         
-        for num, cnt in count.items():
-            freq[cnt].append(num)
+        for num, count in count.items():
+            freq[count].append(num)
         
         res = []
-        for i in range(len(freq) - 1, 0, -1): 
+        for i in range(len(freq) - 1, -1, -1): 
             for num in freq[i]:
                 res.append(num)
                 if len(res) == k:
