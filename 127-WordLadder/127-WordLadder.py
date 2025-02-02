@@ -1,25 +1,29 @@
-from collections import deque
-
 class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: list) -> int:
-        wordSet = set(wordList)  # Convert list to set for fast lookup
-        if endWord not in wordSet:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        res = 0
+        words = set(wordList)
+
+        if (beginWord == endWord ) or (endWord not in wordList):
             return 0
 
-        queue = deque([(beginWord, 1)])  # BFS queue storing (word, steps)
+        q = deque([beginWord])
 
-        while queue:
-            word, steps = queue.popleft()
+        while q:
+            res +=1
+            for i in range(len(q)):
+                node = q.popleft()
+                if node == endWord:
+                    return res
+                
+                for i in range(len(node)):
+                    for c in range(97,123):
+                        if chr(c) == node[i]:
+                            continue
+                        nei = node[:i] + chr(c) + node[i+1:]
+                        if nei in words:
+                            q.append(nei)
+                            words.remove(nei)
+        return 0
 
-            if word == endWord:
-                return steps
 
-            for i in range(len(word)):
-                original = word[i]
-                for ch in range(26):  # Check all possible single character changes
-                    transformed = word[:i] + chr(ord('a') + ch) + word[i + 1:]
-                    if transformed in wordSet:
-                        wordSet.remove(transformed)  # Avoid revisiting
-                        queue.append((transformed, steps + 1))
-        
-        return 0  # If no valid transformation is found
+
