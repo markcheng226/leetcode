@@ -1,11 +1,10 @@
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-        res = 0
+        res =0
         words = set(wordList)
-
-        if (beginWord == endWord ) or (endWord not in wordList):
+        
+        if (beginWord == endWord) or (endWord not in wordList):
             return 0
-
         q = deque([beginWord])
 
         while q:
@@ -24,6 +23,3 @@ class Solution:
                             q.append(nei)
                             words.remove(nei)
         return 0
-
-
-
