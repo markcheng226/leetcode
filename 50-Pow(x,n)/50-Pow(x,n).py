@@ -13,5 +13,5 @@ class Solution:
             if power %2 ==1:
                 res *= x
             x *= x
-            power //=2
+            power = power //2
         return res if n >=0 else 1/res
