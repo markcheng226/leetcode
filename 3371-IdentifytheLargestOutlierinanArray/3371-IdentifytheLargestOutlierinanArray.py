@@ -1,15 +1,14 @@
 class Solution:
     def getLargestOutlier(self, nums: List[int]) -> int:
         outlier = float("-inf")
-        totalsum = sum(nums)
+        totalSum = sum(nums)
         count = Counter(nums)
 
-        for i in range(len(nums)):
-            count[nums[i]] -=1
-            totalsum -= nums[i]
-
-            if totalsum % 2 == 0 and count[totalsum//2]>0:
-                outlier = max(nums[i],outlier)
-            count[nums[i]] +=1
-            totalsum += nums[i]
+        for num in nums:
+            count[num] -=1
+            totalSum -= num
+            if totalSum % 2 == 0 and count[totalSum //2] > 0:
+                outlier = max(outlier,num)
+            count[num] +=1
+            totalSum +=num
         return outlier
