@@ -7,8 +7,10 @@ class Solution:
         for num in nums:
             count[num] -=1
             totalSum -= num
-            if totalSum % 2 == 0 and count[totalSum //2] > 0:
+            
+            if totalSum %2 == 0 and count[totalSum //2] > 0:
                 outlier = max(outlier,num)
+            
             count[num] +=1
-            totalSum +=num
+            totalSum += num
         return outlier
