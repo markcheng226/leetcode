@@ -6,7 +6,7 @@ class Solution:
         for start,end in intervals:
             lastend = output[-1][1]
             if start <= lastend:
-                output[-1][1] = max(lastend,end)
+                output[-1][1] = max(end,lastend)
             else:
                 output.append([start,end])
         return output
