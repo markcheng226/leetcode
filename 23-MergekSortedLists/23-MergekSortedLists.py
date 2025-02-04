@@ -1,24 +1,28 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        
         if len(lists) == 0:
             return None
         
         if len(lists) == 1:
             return lists[0]
-
-        while len(lists) >1:
+        
+        while len(lists) > 1:
             res = []
             for i in range(0,len(lists),2):
                 l1 = lists[i]
-                l2 = lists[i+1] if i +1 < len(lists) else None
+                l2 = lists[i+1] if i + 1 < len(lists) else None
                 res.append(self.mergeLists(l1,l2))
             lists = res
-        return lists[0]
+        return lists[0]        
 
     
-
-
-    def mergeLists(self,l1,l2):
+    def mergeLists(selef,l1,l2):
         dummy = ListNode()
         tail = dummy
 
@@ -29,13 +33,6 @@ class Solution:
             else:
                 tail.next = l2
                 l2 = l2.next
-            
-            tail= tail.next
-        
-        if l1:
-            tail.next = l1
-
-        if l2:
-            tail.next = l2
-
+            tail = tail.next
+        tail.next = l1 or l2
         return dummy.next
