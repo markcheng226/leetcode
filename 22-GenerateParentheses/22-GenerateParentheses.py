@@ -1,13 +1,13 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        stack = []
         res = []
+        stack = []
 
         def dfs(openN,closeN):
-            if openN == closeN == n:
-                res.append("".join(stack))
-
-            if openN < n:
+            if openN == closeN == n :
+                res.append( "".join(stack))
+            
+            if openN<n:
                 stack.append("(")
                 dfs(openN+1,closeN)
                 stack.pop()
