@@ -1,13 +1,14 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        res = 0
-        l = r = 0
+        l =r = 0
+        res =0
 
         while r < len(nums)-1:
             far = 0
             for i in range(l,r+1):
-                far = max(far,i+nums[i])
+                far = max(far,nums[i]+i)
             l = r
-            r = far
+            r= far
             res +=1
+
         return res
