@@ -1,10 +1,10 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         preMap = {i:[] for i in range(numCourses)}
-        for crs,pre in prerequisites:
+        for crs, pre in prerequisites:
             preMap[crs].append(pre)
-        
-        visiting = set()
+
+        visiting= set()
         
         def dfs(crs):
             if crs in visiting:
