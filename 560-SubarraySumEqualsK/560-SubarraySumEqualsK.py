@@ -1,6 +1,6 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        res =0
+        res = 0
         curSum = 0
         prefixSum = {0:1}
 
@@ -14,5 +14,5 @@ class Solution:
             if curSum in prefixSum:
                 prefixSum[curSum] +=1
             else:
-                prefixSum[curSum] =1
+                prefixSum[curSum] = 1
         return res
