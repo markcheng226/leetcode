@@ -10,8 +10,9 @@ class Solution:
                 right +=1
             if left == right:
                 res = max(res,left*2)
-            if left<right:
+            if left < right:
                 left = right = 0
+        
         left = right = 0
 
         for c in reversed(s):
@@ -21,6 +22,6 @@ class Solution:
                 left +=1
             if left == right:
                 res = max(res,left*2)
-            if right < left:
+            if right< left:
                 left = right = 0
         return res
