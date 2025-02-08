@@ -16,15 +16,15 @@ class Solution:
         while l1 is not None:
             l2 = Node(l1.val)
             l2.next = l1.next
-            l1.next = l2
+            l1.next = l2  
             l1 = l2.next
-        
         newhead = head.next
-        l1 = head
+
+        l1= head
         while l1 is not None:
             if l1.random is not None:
                 l1.next.random = l1.random.next
-            l1 = l1.next.next
+            l1= l1.next.next
         
         l1 = head
         while l1 is not None:
@@ -34,3 +34,5 @@ class Solution:
                 l2.next = l2.next.next
             l1 = l1.next
         return newhead
+                
+            
