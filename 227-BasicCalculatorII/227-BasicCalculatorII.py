@@ -4,10 +4,11 @@ class Solution:
         sign = '+'
         stack = []
 
+
         for i in range(len(s)):
             char = s[i]
             if char.isdigit():
-                num = 10*num +int(char)
+                num = num*10 + int(char)
             
             if char in "+-*/" or i == len(s)-1:
                 if sign == '+':
@@ -17,7 +18,8 @@ class Solution:
                 elif sign == '*':
                     stack.append(stack.pop() * num)
                 elif sign == '/':
-                    stack.append(int(stack.pop()/num))
+                    stack.append(int(stack.pop() / num))
                 sign =char
                 num = 0
         return sum(stack)
+                
