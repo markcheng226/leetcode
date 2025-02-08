@@ -10,14 +10,15 @@ class MedianFinder:
         heapq.heappush(self.large, -heapq.heappop(self.small))
 
         if len(self.small) < len(self.large):
-            heapq.heappush(self.small,-heapq.heappop(self.large))
+            heapq.heappush(self.small, -heapq.heappop(self.large))
         
 
     def findMedian(self) -> float:
         if len(self.small) > len(self.large):
             return -self.small[0]
+        
         else:
-            return (-self.small[0] + self.large[0]) /2
+            return (-self.small[0] + self.large[0])/2
         
 
 
