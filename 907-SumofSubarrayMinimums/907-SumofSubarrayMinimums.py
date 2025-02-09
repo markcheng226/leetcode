@@ -1,7 +1,7 @@
 class Solution:
     def sumSubarrayMins(self, arr: List[int]) -> int:
-        n = len(arr)
         Mod = 10**9+7
+        n = len(arr)
 
         stack = []
         left = n*[-1]
@@ -21,8 +21,8 @@ class Solution:
         
         res = 0
         for i in range(n):
-            leftCount = i -left[i]
-            rightCount = right[i]-i
-            res += arr[i] *leftCount *rightCount
+            leftCount = i - left[i]
+            rightCount = right[i] - i
+            res += arr[i] * leftCount * rightCount
             res %= Mod
         return res
