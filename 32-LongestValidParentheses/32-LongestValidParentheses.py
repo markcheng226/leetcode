@@ -24,5 +24,6 @@ class Solution:
             if left == right:
                 res = max(res,left*2)
             if right < left:
-                left = right = 0
+                left = right =0
         return res
+                
