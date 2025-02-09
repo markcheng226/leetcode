@@ -4,6 +4,7 @@ class Solution:
         candidates.sort()
 
         def dfs(i,cur,total):
+
             if total == target:
                 res.append(cur.copy())
                 return res
@@ -13,7 +14,8 @@ class Solution:
                     return
                 
                 cur.append(candidates[j])
-                dfs(j,cur,total +candidates[j])
+                dfs(j,cur,total+candidates[j])
                 cur.pop()
         dfs(0,[],0)
         return res
+            
