@@ -3,11 +3,11 @@ class Solution:
         res = 0
         words = set(wordList)
 
-        if (beginWord == endWord) or (endWord not in wordList):
+        if (endWord not in wordList) or (beginWord == endWord):
             return 0
         
-        q =deque([beginWord])
-
+        q=deque([beginWord])
+        
         while q:
             res +=1
             for i in range(len(q)):
