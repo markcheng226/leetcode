@@ -3,7 +3,7 @@ class Solution:
         data = sorted(zip(timestamp,username,website))
         users = defaultdict(list)
 
-        for i ,user,site in data:
+        for i,user,site in data:
             users[user].append(site)
         
         patterns = Counter()
