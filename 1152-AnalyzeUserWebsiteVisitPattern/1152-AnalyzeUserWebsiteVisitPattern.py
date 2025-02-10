@@ -6,9 +6,8 @@ class Solution:
         for i,user,site in data:
             users[user].append(site)
         
-        patterns = Counter()
+        pattern = Counter()
 
         for user,sites in users.items():
-            patterns.update(set(combinations(sites,3)))
-        
-        return min(patterns,key = lambda x:(-patterns[x],x))
+            pattern.update(set(combinations(sites,3)))
+        return min(pattern,key = lambda x:(-pattern[x],x))
