@@ -1,9 +1,9 @@
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         directions = [1,0],[-1,0],[0,1],[0,-1]
+        rows,cols = len(grid),len(grid[0])
         fresh = 0
         res = 0
-        rows,cols = len(grid),len(grid[0])
 
         for r in range(rows):
             for c in range(cols):
@@ -14,16 +14,16 @@ class Solution:
             flag = False
             for r in range(rows):
                 for c in range(cols):
-                    if grid[r][c] == 2:
+                    if grid[r][c] ==2:
                         for dr,dc in directions:
                             row,col = r+dr,c+dc
-                            if (row in range(rows) and col in range(cols) and grid[row][col] == 1):
+                            if ( row in range(rows) and col in range(cols) and grid[row][col] == 1):
                                 grid[row][col] = 3
                                 flag = True
                                 fresh -=1
             if not flag:
                 return -1
-            
+                
             for r in range(rows):
                 for c in range(cols):
                     if grid[r][c] == 3:
