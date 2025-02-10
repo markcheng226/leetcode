@@ -5,7 +5,7 @@ class Solution:
         heapq.heapify(maxHeap)
 
         res = ""
-        prev= None
+        prev = None
 
         while prev or maxHeap:
             if prev and not maxHeap:
@@ -14,7 +14,7 @@ class Solution:
             count,char = heapq.heappop(maxHeap)
             res += char
             count +=1
-
+            
             if prev:
                 heapq.heappush(maxHeap,prev)
                 prev = None
@@ -22,4 +22,3 @@ class Solution:
             if count != 0:
                 prev = [count,char]
         return res
-                
