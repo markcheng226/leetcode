@@ -3,11 +3,11 @@ class Solution:
         res = 0
         words = set(wordList)
 
-        if (endWord not in wordList) or (beginWord == endWord):
+        if (beginWord == endWord) or (endWord not in wordList):
             return 0
-        
-        q=deque([beginWord])
-        
+
+        q = deque([beginWord])
+
         while q:
             res +=1
             for i in range(len(q)):
@@ -23,3 +23,4 @@ class Solution:
                             words.remove(nei)
                             q.append(nei)
         return 0
+            
