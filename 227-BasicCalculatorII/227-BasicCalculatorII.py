@@ -1,7 +1,7 @@
 class Solution:
     def calculate(self, s: str) -> int:
         stack = []
-        sign ='+'
+        sign = '+'
         num = 0
 
         for i in range(len(s)):
@@ -14,7 +14,7 @@ class Solution:
                 elif sign == '-':
                     stack.append(-num)
                 elif sign == '*':
-                    stack.append(stack.pop() * num)
+                    stack.append(stack.pop() *num)
                 elif sign == '/':
                     stack.append(int(stack.pop() / num))
                 sign = char
