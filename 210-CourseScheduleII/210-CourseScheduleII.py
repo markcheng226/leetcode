@@ -3,11 +3,12 @@ class Solution:
         preMap = {i:[] for i in range(numCourses)}
         for crs,pre in prerequisites:
             preMap[crs].append(pre)
+        
         res =[]
         
-        cycle = set()
         visit = set()
-        
+        cycle = set()
+
         def backtrack(crs):
             if crs in cycle:
                 return False
