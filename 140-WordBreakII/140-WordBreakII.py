@@ -1,8 +1,8 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         wordDict = set(wordDict)
-        res = []
         cur = []
+        res = []
 
         def backtrack(i):
             if i == len(s):
