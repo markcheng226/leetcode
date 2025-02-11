@@ -3,7 +3,8 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        l , r = 0,len(matrix)-1
+        l,r= 0,len(matrix)-1
+
         while l < r:
             top,bottom = l,r
             for i in range(r-l):
