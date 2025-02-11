@@ -3,7 +3,7 @@ class Solution:
         Mod = 10**9+7
         n = len(arr)
 
-        stack = []
+        stack=[]
         left = n*[-1]
         for i in range(n):
             while stack and arr[stack[-1]] > arr[i]:
@@ -22,7 +22,7 @@ class Solution:
         res = 0
         for i in range(n):
             leftCount = i - left[i]
-            rightCount = right[i] -i
+            rightCount = right[i]-i
             res += arr[i] * leftCount * rightCount
             res %= Mod
         return res
