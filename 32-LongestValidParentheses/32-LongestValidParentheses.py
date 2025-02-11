@@ -4,16 +4,16 @@ class Solution:
         left = right = 0
 
         for c in s:
-            if c == "(":
+            if c =="(":
                 left +=1
-            else :
+            else:
                 right +=1
             if left == right:
-                res = max(res,left *2)
-            if left < right:
-                left = right =0
+                res = max(res,left*2)
+            if left<right:
+                left = right = 0
         left = right = 0
-
+        
         for c in reversed(s):
             if c == ")":
                 right +=1
@@ -22,5 +22,5 @@ class Solution:
             if left == right:
                 res = max(res,left*2)
             if right<left:
-                left = right =0
+                left = right = 0
         return res
