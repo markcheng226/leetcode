@@ -4,19 +4,18 @@ class Solution:
         res = []
 
         for i in range(len(nums)):
-            if i > 0 and nums[i]== nums[i-1]:
+            if i > 0 and nums[i] == nums[i-1]:
                 continue
             for j in range(i+1,len(nums)):
                 if j > i+1 and nums[j] == nums[j-1]:
                     continue
-                
-                l , r = j+1,len(nums)-1
+                l, r = j+1,len(nums)-1
                 while l < r:
-                    fourSum = nums[i] + nums[j] + nums[l] + nums[r]
-                    if fourSum > target:
-                        r -=1
-                    elif fourSum < target:
+                    threeSum = nums[i] + nums[j] + nums[l] + nums[r]
+                    if threeSum < target:
                         l +=1
+                    elif threeSum > target:
+                        r -=1
                     else:
                         res.append([nums[i],nums[j],nums[l],nums[r]])
                         l+=1
