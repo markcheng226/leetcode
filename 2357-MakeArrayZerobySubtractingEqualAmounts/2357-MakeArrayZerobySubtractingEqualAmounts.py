@@ -1,11 +1,11 @@
 class Solution:
     def minimumOperations(self, nums: List[int]) -> int:
+        nums.sort()
         cur = 0
         res = 0
-        nums.sort()
 
         for num in nums:
-            num -=cur
+            num -= cur
 
             if num > 0:
                 cur +=num
