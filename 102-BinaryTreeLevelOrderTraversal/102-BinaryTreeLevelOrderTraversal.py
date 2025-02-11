@@ -7,9 +7,9 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
-
+        
         def dfs(node,depth):
-            if node is None:
+            if not node:
                 return None
             
             if len(res) == depth:
