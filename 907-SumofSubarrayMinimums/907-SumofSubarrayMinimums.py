@@ -12,7 +12,7 @@ class Solution:
             stack.append(i)
         
         stack = []
-        right = n * [n]
+        right = n*[n]
         for i in range(n-1,-1,-1):
             while stack and arr[stack[-1]] >= arr[i]:
                 stack.pop()
@@ -21,8 +21,8 @@ class Solution:
         
         res = 0
         for i in range(n):
-            leftCount = i - left[i]
+            leftCount = i -left[i]
             rightCount = right[i]-i
-            res += arr[i] * leftCount * rightCount
+            res += arr[i] * leftCount *rightCount
             res %= Mod
         return res
