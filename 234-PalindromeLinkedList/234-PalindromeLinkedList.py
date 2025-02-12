@@ -5,11 +5,13 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        vals = []
+        vals1 = []
         while head:
-            vals.append(head.val)
+            vals1.append(head.val)
             head = head.next
         
-        vals2 = list(reversed(vals))
+        vals2 = list(reversed(vals1))
 
-        return True if vals == vals2 else False
+        if vals1 == vals2:
+            return True
+        return False        
