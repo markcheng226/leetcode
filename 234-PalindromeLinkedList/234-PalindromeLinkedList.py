@@ -9,4 +9,7 @@ class Solution:
         while head:
             vals.append(head.val)
             head = head.next
-        return vals == vals[::-1]
+        
+        vals2 = list(reversed(vals))
+
+        return True if vals == vals2 else False
