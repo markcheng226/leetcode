@@ -4,7 +4,7 @@ class Solution:
         res = 0
         directions = [1,0],[-1,0],[0,1],[0,-1]
         rows,cols = len(grid),len(grid[0])
-        
+
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == 1:
@@ -17,15 +17,16 @@ class Solution:
                     if grid[r][c] == 2:
                         for dr,dc in directions:
                             row,col = r+dr,c+dc
-                            if(row in range(rows) and col in range(cols) and grid[row][col] == 1):
-                                grid[row][col] = 3
+                            if (row in range(rows) and col in range(cols) and grid[row][col] == 1):
+                                grid[row][col] =3
                                 flag = True
                                 fresh -=1
             if not flag:
                 return -1
+            
             for r in range(rows):
                 for c in range(cols):
-                    if grid[r][c] ==3:
+                    if grid[r][c] == 3:
                         grid[r][c] =2
             res +=1
         return res
