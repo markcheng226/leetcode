@@ -4,7 +4,7 @@ class Solution:
         res = {}
 
         for i in range(len(nums2)-1,-1,-1):
-            while stack and stack[-1]< nums2[i]:
+            while stack and stack[-1] < nums2[i]:
                 stack.pop()
             res[nums2[i]] = stack[-1] if stack else -1
             stack.append(nums2[i])
