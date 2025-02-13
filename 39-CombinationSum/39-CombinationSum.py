@@ -11,9 +11,9 @@ class Solution:
             for j in range(i,len(candidates)):
                 if total + candidates[j] > target:
                     return
-                
-                cur.append(candidates[j])
-                backtrack(j,cur,total +candidates[j])
-                cur.pop()
+                else:
+                    cur.append(candidates[j])
+                    backtrack(j,cur,total +candidates[j])
+                    cur.pop()
         backtrack(0,[],0)
         return res
