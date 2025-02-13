@@ -1,5 +1,6 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        res = []
         stack = []
 
         for a in asteroids:
