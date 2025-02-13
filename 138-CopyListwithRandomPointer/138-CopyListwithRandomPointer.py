@@ -18,6 +18,7 @@ class Solution:
             l2.next = l1.next
             l1.next = l2
             l1 = l2.next
+        
         newhead = head.next
 
         l1 = head
@@ -29,8 +30,10 @@ class Solution:
         l1 = head
         while l1 is not None:
             l2 = l1.next
-            l1.next = l2.next
+            l1.next =l2.next
             if l2.next is not None:
                 l2.next = l2.next.next
             l1 = l1.next
         return newhead
+
+        
