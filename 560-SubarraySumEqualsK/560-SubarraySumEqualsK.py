@@ -14,5 +14,6 @@ class Solution:
             if curSum in prefixSum:
                 prefixSum[curSum] +=1
             else:
-                prefixSum[curSum] =1
+                prefixSum[curSum] = 1
+
         return res
