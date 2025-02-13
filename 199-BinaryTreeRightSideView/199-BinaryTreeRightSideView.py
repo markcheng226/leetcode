@@ -9,8 +9,9 @@ class Solution:
         res = []
 
         def dfs(node,depth):
-            if node is None:
+            if not node:
                 return None
+            
             if len(res) == depth:
                 res.append(node.val)
             
