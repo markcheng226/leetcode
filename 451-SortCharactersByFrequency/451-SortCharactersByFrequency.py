@@ -7,5 +7,5 @@ class Solution:
 
         while maxHeap:
             count,char = heapq.heappop(maxHeap)
-            res += (-count*char)
+            res += (-count *char)
         return "".join(res)
