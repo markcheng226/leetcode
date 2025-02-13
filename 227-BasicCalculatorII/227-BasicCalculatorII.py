@@ -1,8 +1,8 @@
 class Solution:
     def calculate(self, s: str) -> int:
-        stack = []
         num = 0
         sign = '+'
+        stack = []
 
         for i in range(len(s)):
             char = s[i]
@@ -14,9 +14,9 @@ class Solution:
                 elif sign == '-':
                     stack.append(-num)
                 elif sign == '*':
-                    stack.append(stack.pop() *num)
+                    stack.append(stack.pop() * num)
                 elif sign == '/':
                     stack.append(int(stack.pop() / num))
-                sign =char
+                sign = char
                 num = 0
         return sum(stack)
