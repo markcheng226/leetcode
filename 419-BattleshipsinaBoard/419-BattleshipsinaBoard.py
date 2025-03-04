@@ -4,9 +4,17 @@ class Solution:
         n = len(board[0])
         res = 0
 
+        def dfs(i,j):
+            if i < 0 or i>=m or j<0 or j>=n or board[i][j] == ".":
+                return
+            
+            board[i][j] = "."
+            dfs(i+1,j)
+            dfs(i,j+1)
+        
         for i in range(m):
             for j in range(n):
                 if board[i][j] == "X":
-                    if (i==0 or board[i-1][j] == ".") and (j==0 or board[i][j-1] == "."):
-                        res +=1
+                    res +=1
+                    dfs(i,j)
         return res
