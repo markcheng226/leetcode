@@ -1,13 +1,14 @@
 class Solution:
     def maxSum(self, grid: List[List[int]], limits: List[int], k: int) -> int:
-        a = []
+        ele = []
 
         for i in range(len(grid)):
-            s = sorted(grid[i], reverse=True)
-            a.extend(s[:limits[i]])
+            s = sorted(grid[i],reverse = True)
+            ele.extend(s[:limits[i]])
         
-        a.sort()
-        s = 0
+        ele.sort()
+        
+        res = 0
         for i in range(k):
-            s += a.pop()
-        return s
+            res += ele.pop()
+        return res
