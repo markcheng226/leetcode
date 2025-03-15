@@ -11,5 +11,5 @@ class Solution:
     
         res = 0
         for i in range(k):
-            res -= heapq.heappop(maxHeap)
+            res += -heapq.heappop(maxHeap)
         return res
