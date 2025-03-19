@@ -4,9 +4,9 @@ class Solution:
         for crs,pre in prerequisites:
             preMap[crs].append(pre)
         
-        cycle = set()
-        visit = set()
         res = []
+        cycle = set()
+        visit =set()
         
         def dfs(crs):
             if crs in cycle:
@@ -28,5 +28,3 @@ class Solution:
             if dfs(c) == False:
                 return []
         return res
-                
-            
