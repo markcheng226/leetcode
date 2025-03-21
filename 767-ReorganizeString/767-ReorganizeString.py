@@ -1,8 +1,8 @@
-// Last updated: 3/21/2025, 6:52:57 PM
+// Last updated: 3/21/2025, 6:53:50 PM
 class Solution:
     def reorganizeString(self, s: str) -> str:
         count = Counter(s)
-        maxHeap = [[-count,char] for char,count in count.items()]
+        maxHeap = [[-count,char] for char, count in count.items()]
         heapq.heapify(maxHeap)
 
         res = ""
