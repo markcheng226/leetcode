@@ -1,7 +1,8 @@
+// Last updated: 3/21/2025, 6:22:13 PM
 class Node:
     def __init__(self,key,value):
         self.key,self.value = key,value
-        self.next = self.prev = None
+        self.prev = self.next = None
 
 class LRUCache:
 
@@ -19,8 +20,6 @@ class LRUCache:
         prev,nxt = self.right.prev,self.right
         prev.next = nxt.prev = node
         node.prev,node.next = prev,nxt
-    
-
         
 
     def get(self, key: int) -> int:
@@ -36,11 +35,12 @@ class LRUCache:
             self.remove(self.cache[key])
         self.cache[key] = Node(key,value)
         self.add(self.cache[key])
-
+        
         if len(self.cache) > self.cap:
             lru = self.left.next
             self.remove(lru)
             del self.cache[lru.key]
+
         
 
 
