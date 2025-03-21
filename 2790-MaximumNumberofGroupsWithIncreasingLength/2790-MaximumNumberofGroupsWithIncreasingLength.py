@@ -1,3 +1,4 @@
+// Last updated: 3/21/2025, 7:52:23 PM
 class Solution:
     def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
         usageLimits.sort()
@@ -6,6 +7,6 @@ class Solution:
 
         for i in range(len(usageLimits)):
             total += usageLimits[i]
-            if total >= ((count +1)*(count+2))//2:
+            if total >= ((count+1)*(count+2))//2:
                 count +=1
         return count
