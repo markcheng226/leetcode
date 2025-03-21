@@ -1,3 +1,4 @@
+// Last updated: 3/21/2025, 7:58:38 PM
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         words = set(wordList)
