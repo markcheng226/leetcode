@@ -1,3 +1,4 @@
+// Last updated: 3/21/2025, 6:52:57 PM
 class Solution:
     def reorganizeString(self, s: str) -> str:
         count = Counter(s)
@@ -6,7 +7,7 @@ class Solution:
 
         res = ""
         prev = None
-        
+
         while prev or maxHeap:
             if prev and not maxHeap:
                 return ""
