@@ -1,18 +1,18 @@
-// Last updated: 3/22/2025, 11:41:59 AM
+// Last updated: 3/22/2025, 11:55:54 AM
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
         res = []
 
         for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:
+            if i>0 and nums[i] == nums[i-1]:
                 continue
             for j in range(i+1,len(nums)):
                 if j > i+1 and nums[j] == nums[j-1]:
                     continue
                 l,r = j+1,len(nums)-1
 
-                while l < r:
+                while l <r :
                     fourSum = nums[i] + nums[j] + nums[l] + nums[r]
                     if fourSum > target:
                         r -=1
