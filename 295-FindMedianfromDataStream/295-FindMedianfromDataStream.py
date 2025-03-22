@@ -1,17 +1,17 @@
+// Last updated: 3/22/2025, 9:05:20 AM
 class MedianFinder:
-
     def __init__(self):
         self.small = []
         self.large = []
-    
-    def addNum(self,num):
+
+    def addNum(self, num: int) -> None:
         heapq.heappush(self.small,-num)
         heapq.heappush(self.large,-heapq.heappop(self.small))
 
         if len(self.small) < len(self.large):
             heapq.heappush(self.small,-heapq.heappop(self.large))
-    
-    def findMedian(self):
+        
+    def findMedian(self) -> float:
         if len(self.small) > len(self.large):
             return -self.small[0]
         else:
