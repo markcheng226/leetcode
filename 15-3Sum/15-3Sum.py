@@ -1,8 +1,9 @@
+// Last updated: 3/22/2025, 9:16:12 AM
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         res = []
-
+        
         for i in range(len(nums)):
             if nums[i] > 0:
                 break
@@ -11,9 +12,9 @@ class Solution:
                 continue
             
             l,r = i+1,len(nums)-1
-            
+
             while l < r:
-                threeSum = nums[i] + nums[l] + nums[r]
+                threeSum = nums[i]+nums[l]+nums[r]
                 if threeSum > 0:
                     r-=1
                 elif threeSum < 0:
@@ -25,3 +26,4 @@ class Solution:
                     while l < r and nums[l] == nums[l-1]:
                         l +=1
         return res
+                
