@@ -1,3 +1,4 @@
+// Last updated: 3/21/2025, 8:11:06 PM
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
         data = sorted(zip(timestamp,username,website))
@@ -5,6 +6,7 @@ class Solution:
 
         for i, user,site in data:
             users[user].append(site)
+            
         pattern = Counter()
 
         for user,sites in users.items():
