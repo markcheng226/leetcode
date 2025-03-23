@@ -1,7 +1,7 @@
-// Last updated: 3/21/2025, 7:25:03 PM
+# Last updated: 3/23/2025, 7:48:50 PM
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        preMap = {i:[] for i in range(numCourses)}
+        preMap = { i : [] for i in range(numCourses)}
         for crs,pre in prerequisites:
             preMap[crs].append(pre)
         cycle = set()
@@ -11,10 +11,9 @@ class Solution:
         def dfs(crs):
             if crs in cycle:
                 return False
-
             if crs in visit:
                 return True
-
+            
             cycle.add(crs)
             for pre in preMap[crs]:
                 if dfs(pre) == False:
@@ -22,6 +21,7 @@ class Solution:
             cycle.remove(crs)
             visit.add(crs)
             res.append(crs)
+            preMap[crs] = []
             return True
         
         for c in range(numCourses):
