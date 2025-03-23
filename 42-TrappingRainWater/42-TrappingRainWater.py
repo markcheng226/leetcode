@@ -1,4 +1,4 @@
-# Last updated: 3/23/2025, 6:39:36 PM
+# Last updated: 3/23/2025, 6:39:40 PM
 class Solution:
     def trap(self, height: List[int]) -> int:
         l,r = 0,len(height)-1
