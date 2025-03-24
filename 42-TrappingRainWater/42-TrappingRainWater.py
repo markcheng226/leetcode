@@ -1,4 +1,4 @@
-# Last updated: 3/23/2025, 6:39:40 PM
+# Last updated: 3/24/2025, 1:02:22 PM
 class Solution:
     def trap(self, height: List[int]) -> int:
         l,r = 0,len(height)-1
@@ -10,9 +10,9 @@ class Solution:
                 l +=1
                 leftmax = max(leftmax,height[l])
                 res += leftmax - height[l]
+            
             else:
                 r -=1
                 rightmax = max(rightmax,height[r])
                 res += rightmax - height[r]
-
         return res
