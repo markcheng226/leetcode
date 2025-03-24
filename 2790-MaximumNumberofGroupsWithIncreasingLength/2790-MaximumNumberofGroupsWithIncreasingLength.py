@@ -1,8 +1,7 @@
-# Last updated: 3/23/2025, 7:53:25 PM
+# Last updated: 3/24/2025, 3:53:52 PM
 class Solution:
     def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
         usageLimits.sort()
-
         total,count = 0,0
 
         for i in range(len(usageLimits)):
