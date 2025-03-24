@@ -1,4 +1,4 @@
-# Last updated: 3/23/2025, 6:13:08 PM
+# Last updated: 3/24/2025, 11:42:24 AM
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -6,18 +6,18 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        carry = 0
         dummy = ListNode()
         tail = dummy
-
+        carry = 0
+        
         while l1 or l2 or carry:
             v1 = l1.val if l1 else 0
             v2 = l2.val if l2 else 0
             val = v1+v2+carry
 
-            carry = val //10
+            carry = val//10
             val = val %10
-
+            
             tail.next = ListNode(val)
             tail = tail.next
             
