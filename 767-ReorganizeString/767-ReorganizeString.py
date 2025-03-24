@@ -1,4 +1,4 @@
-# Last updated: 3/23/2025, 6:06:57 PM
+# Last updated: 3/24/2025, 11:32:00 AM
 class Solution:
     def reorganizeString(self, s: str) -> str:
         count = Counter(s)
@@ -13,7 +13,7 @@ class Solution:
                 return ""
             
             count,char = heapq.heappop(maxHeap)
-            res +=char
+            res += char
             count +=1
 
             if prev:
