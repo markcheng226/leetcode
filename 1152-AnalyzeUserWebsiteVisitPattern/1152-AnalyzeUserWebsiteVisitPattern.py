@@ -1,15 +1,14 @@
-# Last updated: 3/24/2025, 5:52:37 PM
+# Last updated: 3/24/2025, 6:08:17 PM
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
-        
         data = sorted(zip(timestamp,username,website))
-        
+
         users = defaultdict(list)
-        for i,user,website in data:
+        for i, user,website in data:
             users[user].append(website)
         
         pattern = Counter()
-        for user, sites in users.items():
+        for user,sites in users.items():
             pattern.update(set(combinations(sites,3)))
         
         return min(pattern,key=lambda x:(-pattern[x],x))
