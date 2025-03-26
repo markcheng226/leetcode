@@ -1,4 +1,4 @@
-# Last updated: 3/25/2025, 11:28:38 PM
+# Last updated: 3/26/2025, 11:37:23 AM
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         curSum = 0
@@ -7,10 +7,10 @@ class Solution:
 
         for num in nums:
             curSum += num
-            diff = curSum - k
+            diff = curSum -k
 
             if diff in prefixSum:
-                res +=prefixSum[diff]
+                res += prefixSum[diff]
             
             if curSum in prefixSum:
                 prefixSum[curSum] +=1
