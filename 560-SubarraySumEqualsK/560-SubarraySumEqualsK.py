@@ -1,8 +1,7 @@
-# Last updated: 3/26/2025, 11:37:23 AM
+# Last updated: 3/27/2025, 6:33:10 PM
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        curSum = 0
-        res = 0
+        curSum,res = 0,0
         prefixSum = {0:1}
 
         for num in nums:
