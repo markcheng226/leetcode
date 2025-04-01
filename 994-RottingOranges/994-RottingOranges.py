@@ -1,4 +1,4 @@
-# Last updated: 3/31/2025, 10:08:12 PM
+# Last updated: 3/31/2025, 10:08:18 PM
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         rows,cols = len(grid),len(grid[0])
