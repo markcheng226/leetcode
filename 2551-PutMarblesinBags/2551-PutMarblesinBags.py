@@ -1,4 +1,4 @@
-# Last updated: 4/3/2025, 7:37:15 PM
+# Last updated: 4/3/2025, 7:37:18 PM
 class Solution:
     def putMarbles(self, weights: List[int], k: int) -> int:
 
