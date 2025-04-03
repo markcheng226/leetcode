@@ -1,17 +1,17 @@
-# Last updated: 3/26/2025, 10:34:05 AM
+# Last updated: 4/3/2025, 2:54:44 PM
 class Solution:
     def reorganizeString(self, s: str) -> str:
         count = Counter(s)
-        maxHeap = [[-count,char] for char,count in count.items()]
+        maxHeap = [[-count,char] for char, count in count.items()]
         heapq.heapify(maxHeap)
 
-        res = ""
         prev = None
+        res = ""
 
         while prev or maxHeap:
             if prev and not maxHeap:
                 return ""
-
+            
             count,char = heapq.heappop(maxHeap)
             res += char
             count +=1
@@ -23,3 +23,5 @@ class Solution:
             if count != 0:
                 prev = [count,char]
         return res
+            
+            
