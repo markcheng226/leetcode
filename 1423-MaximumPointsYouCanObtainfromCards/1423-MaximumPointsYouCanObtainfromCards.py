@@ -1,4 +1,4 @@
-# Last updated: 7/5/2025, 9:31:23 PM
+# Last updated: 7/5/2025, 9:57:06 PM
 class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
         n = len(cardPoints)
@@ -6,13 +6,12 @@ class Solution:
 
         if n == k:
             return total
-        
-        window_size = n-k
-        window_sum = sum(cardPoints[:window_size])
-        min_subarray_sum = window_sum
 
-        for i in range(window_size,n):
-            window_sum += cardPoints[i] - cardPoints[i-window_size]
-            min_subarray_sum = min(min_subarray_sum,window_sum)
+        window_sum = sum(cardPoints[:n-k])
+        min_sum = window_sum
+
+        for i in range(n-k,n): 
+            window_sum += cardPoints[i] - cardPoints[i-(n-k)]
+            min_sum = min(window_sum,min_sum)
         
-        return total - min_subarray_sum
+        return total - min_sum
