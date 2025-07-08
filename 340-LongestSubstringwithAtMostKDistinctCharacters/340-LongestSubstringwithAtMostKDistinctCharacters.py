@@ -1,4 +1,4 @@
-# Last updated: 7/8/2025, 12:20:09 AM
+# Last updated: 7/8/2025, 12:57:24 AM
 class Solution:
     def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
         count = defaultdict(int)
@@ -10,8 +10,9 @@ class Solution:
 
             while len(count) > k:
                 count[s[left]] -=1
-                if count[s[left]] ==0:
+                if count[s[left]] == 0:
                     del count[s[left]]
                 left +=1
+            
             res = max(res,i-left+1)
         return res
