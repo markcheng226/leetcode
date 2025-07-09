@@ -1,4 +1,4 @@
-# Last updated: 7/8/2025, 11:52:32 PM
+# Last updated: 7/8/2025, 11:53:15 PM
 class Solution:
     def judgeSquareSum(self, c: int) -> bool:
         left = 0
