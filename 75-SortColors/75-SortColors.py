@@ -1,4 +1,4 @@
-# Last updated: 7/10/2025, 5:42:18 PM
+# Last updated: 7/10/2025, 5:42:23 PM
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
@@ -18,5 +18,5 @@ class Solution:
             else:
                 nums[mid],nums[high] = nums[high],nums[mid]
                 high -=1
-        return nums
+
 
