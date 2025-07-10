@@ -1,20 +1,22 @@
+# Last updated: 7/10/2025, 5:42:18 PM
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-        count = [0] *3
-        for num in nums:
-            count[num] +=1
-        
-        index =0
+        low = 0 
+        mid = 0
+        high = len(nums)-1
 
-        for i in range(3):
-            while count[i]:
-                count[i] -=1
-                nums[index] = i
-                index +=1
+        while mid <= high:
+            if nums[mid] == 0:
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low +=1
+                mid +=1
+            elif nums[mid] == 1:
+                mid +=1
+            else:
+                nums[mid],nums[high] = nums[high],nums[mid]
+                high -=1
         return nums
-            
 
-                
