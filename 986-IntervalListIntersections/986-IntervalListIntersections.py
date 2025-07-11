@@ -1,4 +1,4 @@
-# Last updated: 7/10/2025, 10:48:00 PM
+# Last updated: 7/10/2025, 10:48:07 PM
 class Solution:
     def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
         i,j=0,0
