@@ -1,4 +1,4 @@
-# Last updated: 7/10/2025, 8:22:13 PM
+# Last updated: 7/10/2025, 8:26:50 PM
 class Solution:
     def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
         i,j = 0,0
@@ -8,14 +8,14 @@ class Solution:
             a_start,a_end = firstList[i]
             b_start,b_end = secondList[j]
 
-            start = max(a_start,b_start)
-            end = min(a_end,b_end)
+            max_start = max(a_start,b_start)
+            min_end = min(a_end,b_end)
 
-            if start <= end:
-                res.append([start,end])
+            if max_start <= min_end:
+                res.append([max_start,min_end])
             
             if a_end < b_end:
                 i+=1
             else:
-                j+=1
+                j +=1
         return res
