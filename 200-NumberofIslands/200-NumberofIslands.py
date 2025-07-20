@@ -1,4 +1,4 @@
-# Last updated: 7/19/2025, 9:23:15 PM
+# Last updated: 7/19/2025, 9:23:24 PM
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         rows,cols = len(grid),len(grid[0])
