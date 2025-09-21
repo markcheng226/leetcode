@@ -1,4 +1,4 @@
-# Last updated: 9/21/2025, 2:29:22 AM
+# Last updated: 9/21/2025, 2:30:55 AM
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         slow = 2
@@ -7,3 +7,6 @@ class Solution:
                 nums[slow] = nums[fast]
                 slow+=1
         return slow
+
+        if len(nums)<2:
+            return len(nums)
