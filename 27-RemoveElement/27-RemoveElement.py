@@ -1,9 +1,7 @@
-# Last updated: 9/23/2025, 2:17:23 AM
+# Last updated: 9/23/2025, 2:17:32 AM
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         slow = 0
-        fast = 0
-
         for fast in range(len(nums)):
             if nums[fast] != val:
                 nums[slow] = nums[fast]
