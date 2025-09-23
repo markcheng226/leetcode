@@ -1,4 +1,4 @@
-# Last updated: 9/23/2025, 2:10:12 AM
+# Last updated: 9/23/2025, 2:10:18 AM
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         target, count = 0,0
