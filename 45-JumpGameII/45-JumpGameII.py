@@ -1,4 +1,4 @@
-# Last updated: 9/30/2025, 3:26:00 AM
+# Last updated: 9/30/2025, 4:06:38 AM
 class Solution:
     def jump(self, nums: List[int]) -> int:
         res,cur_end,far = 0,0,0
