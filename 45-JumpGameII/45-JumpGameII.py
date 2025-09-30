@@ -1,13 +1,12 @@
-# Last updated: 9/30/2025, 4:06:38 AM
+# Last updated: 9/30/2025, 4:06:59 AM
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        res,cur_end,far = 0,0,0
-
+        far,end,res = 0,0,0
         for i in range(len(nums)-1):
             far = max(far,nums[i]+i)
-            if i == cur_end:
+            if i == end:
                 res +=1
-                cur_end = far
-                if cur_end>=len(nums)-1:
+                end = far
+                if end >= len(nums)-1:
                     break
         return res
