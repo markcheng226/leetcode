@@ -1,4 +1,4 @@
-# Last updated: 10/7/2025, 3:09:58 AM
+# Last updated: 10/8/2025, 8:26:22 PM
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         l,r = 0,len(height)-1
@@ -9,7 +9,7 @@ class Solution:
             res = max(res,area)
 
             if height[l] < height[r]:
-                l +=1
+                l+=1
             else:
-                r -=1
+                r-=1
         return res
