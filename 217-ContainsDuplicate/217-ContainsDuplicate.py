@@ -1,11 +1,11 @@
-# Last updated: 4/14/2025, 7:43:59 PM
+# Last updated: 10/9/2025, 11:00:15 PM
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        duplicateSet = set()
-        
-        for num in nums:
-            if num in duplicateSet:
+        seen = set()
+
+        for i in range(len(nums)):
+            if nums[i] in seen:
                 return True
             else:
-                duplicateSet.add(num)
+                seen.add(nums[i])
         return False
