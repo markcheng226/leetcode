@@ -1,9 +1,9 @@
-# Last updated: 10/10/2025, 11:32:24 PM
+# Last updated: 10/11/2025, 10:21:27 PM
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        l,r = 0,len(s)-1
+        l, r = 0,len(s)-1
 
-        while l < r :
+        while l < r:
             while l < r and not s[l].isalnum():
                 l +=1
             while l < r and not s[r].isalnum():
