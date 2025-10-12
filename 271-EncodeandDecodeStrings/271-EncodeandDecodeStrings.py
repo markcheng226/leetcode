@@ -1,12 +1,11 @@
-# Last updated: 10/10/2025, 9:21:10 PM
+# Last updated: 10/11/2025, 9:20:44 PM
 class Codec:
     def encode(self, strs: List[str]) -> str:
         """Encodes a list of strings to a single string.
         """
-        
         res = ""
         for s in strs:
-            res += str(len(s)) + "#" + s
+            res += str(len(s))+"#"+s
         return res
         
 
@@ -23,9 +22,8 @@ class Codec:
             i = j+1
             j = i+length
             res.append(s[i:j])
-            i = j
+            i=j
         return res
-
 
 
 # Your Codec object will be instantiated and called as such:
