@@ -1,9 +1,8 @@
-# Last updated: 10/11/2025, 12:50:18 AM
+# Last updated: 10/11/2025, 11:37:24 PM
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        res = 0
         low = float("inf")
-        
+        res = 0
 
         for i in range(len(prices)):
             low = min(low,prices[i])
