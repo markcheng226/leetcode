@@ -1,4 +1,4 @@
-# Last updated: 10/12/2025, 2:17:24 AM
+# Last updated: 10/13/2025, 5:28:41 PM
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         seen = set()
@@ -10,5 +10,5 @@ class Solution:
                 seen.remove(s[left])
                 left +=1
             seen.add(s[i])
-            res = max ( res, i-left+1)
+            res = max(res,i-left+1)
         return res
