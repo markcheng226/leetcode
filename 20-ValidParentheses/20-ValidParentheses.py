@@ -1,9 +1,8 @@
-# Last updated: 10/17/2025, 1:21:58 AM
+# Last updated: 10/17/2025, 9:54:49 PM
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-
-        close_open = {")":"(","}":"{","]":"["}
+        close_open = {")":"(","]":"[","}":"{"}
 
         for i in s:
             if i in close_open:
@@ -14,3 +13,4 @@ class Solution:
             else:
                 stack.append(i)
         return True if not stack else False
+            
