@@ -1,4 +1,4 @@
-# Last updated: 10/17/2025, 9:54:49 PM
+# Last updated: 10/18/2025, 10:27:23 PM
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
@@ -13,4 +13,3 @@ class Solution:
             else:
                 stack.append(i)
         return True if not stack else False
-            
