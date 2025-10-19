@@ -1,4 +1,4 @@
-# Last updated: 10/19/2025, 12:38:52 AM
+# Last updated: 10/19/2025, 12:40:48 AM
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums)-1
@@ -10,13 +10,13 @@ class Solution:
                 return mid
 
             if nums[l] <= nums[mid]:
-                if target < nums[l] or target > nums[mid]:
-                    l = mid + 1
+                if nums[l] <= target < nums[mid]:
+                    r = mid
                 else:
-                    r = mid         
+                    l = mid +1         
             else:
-                if target > nums[r] or target < nums[mid]:
-                    r = mid -1
+                if nums[r] >= target > nums[mid]:
+                    l = mid +1
                 else:
-                    l = mid 
+                    r = mid
         return -1
