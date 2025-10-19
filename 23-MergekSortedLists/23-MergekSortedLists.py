@@ -1,4 +1,4 @@
-# Last updated: 10/17/2025, 12:52:50 AM
+# Last updated: 10/18/2025, 10:03:21 PM
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -9,15 +9,16 @@ class Solution:
         if len(lists) == 0:
             return None
         if len(lists) == 1:
-            return lists[0]
-        while len(lists) >1:
+            return lists [0]
+        
+        while len(lists) > 1:
             res = []
             for i in range(0,len(lists),2):
                 l1 = lists[i]
-                l2 = lists[i+1] if i+1 < len(lists) else None
+                l2 = lists[i+1] if i+1 < len(lists)else None
                 res.append(self.mergeLists(l1,l2))
             lists = res
-        return lists[0]
+        return lists[0]    
 
     def mergeLists(self,l1,l2):
         dummy = ListNode()
@@ -31,5 +32,7 @@ class Solution:
                 tail.next = l1
                 l1 = l1.next
             tail = tail.next
+
         tail.next = l1 or l2
+
         return dummy.next
