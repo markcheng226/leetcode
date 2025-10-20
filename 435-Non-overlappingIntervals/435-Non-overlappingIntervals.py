@@ -1,9 +1,9 @@
-# Last updated: 10/19/2025, 8:26:15 PM
+# Last updated: 10/19/2025, 8:37:46 PM
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         if not intervals:
             return 0
-
+        
         intervals.sort(key=lambda x:x[0])
         res = 0
         prev_end = intervals[0][1]
