@@ -1,4 +1,4 @@
-# Last updated: 10/22/2025, 12:04:09 AM
+# Last updated: 10/22/2025, 12:07:01 AM
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         res = 0
@@ -13,5 +13,4 @@ class Solution:
                 prev_end = min(end,prev_end)
             else:
                 prev_end = end
-        
         return res
