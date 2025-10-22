@@ -1,4 +1,4 @@
-# Last updated: 10/19/2025, 7:34:27 PM
+# Last updated: 10/22/2025, 12:09:08 AM
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
         intervals.sort(key=lambda x:x[0])
