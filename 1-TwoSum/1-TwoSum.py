@@ -1,4 +1,4 @@
-# Last updated: 10/24/2025, 11:32:06 PM
+# Last updated: 10/24/2025, 11:32:37 PM
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashmap = {}
@@ -6,6 +6,6 @@ class Solution:
         for i in range(len(nums)):
             diff = target - nums[i]
             if diff in hashmap:
-                return [hashmap[diff],i]
+                return [i,hashmap[diff]]
             else:
                 hashmap[nums[i]] = i
