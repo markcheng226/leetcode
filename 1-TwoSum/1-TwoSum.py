@@ -1,4 +1,4 @@
-# Last updated: 10/10/2025, 8:04:08 PM
+# Last updated: 10/24/2025, 11:32:06 PM
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashmap = {}
@@ -9,4 +9,3 @@ class Solution:
                 return [hashmap[diff],i]
             else:
                 hashmap[nums[i]] = i
-        
