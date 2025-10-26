@@ -1,7 +1,7 @@
-# Last updated: 10/11/2025, 10:09:28 PM
+# Last updated: 10/26/2025, 3:11:56 PM
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        res = len(nums) * [0]
+        res = [0] * len(nums)
 
         prefix = 1
         for i in range(len(nums)):
@@ -11,6 +11,7 @@ class Solution:
         postfix = 1
         for i in range(len(nums)-1,-1,-1):
             res[i] = res[i] * postfix
-            postfix = postfix * nums[i]
+            postfix = postfix*nums[i]
         
         return res
+    
