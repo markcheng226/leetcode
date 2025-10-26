@@ -1,20 +1,21 @@
-# Last updated: 10/24/2025, 10:59:07 PM
+# Last updated: 10/26/2025, 2:18:59 PM
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        count = {}
-
         if len(s) != len(t):
             return False
-        
+
+        count = {}
+
         for i in t:
-            count[i] = count.get(i,0)+1
+            count[i] = count.get(i,0) +1
         
         for i in s:
             if i not in count:
                 return False
+            else:
+                count[i] -=1
             
-            count[i] -=1
-
             if count[i] < 0:
                 return False
         return True
+        
