@@ -1,17 +1,18 @@
-# Last updated: 10/26/2025, 3:08:27 PM
+# Last updated: 10/26/2025, 3:09:10 PM
 class Codec:
     def encode(self, strs: List[str]) -> str:
         """Encodes a list of strings to a single string.
         """
         res = ""
         for s in strs:
-            res+=str(len(s)) + "#" +s
+            res += str(len(s)) + "#" + s
         return res
+        
 
     def decode(self, s: str) -> List[str]:
         """Decodes a single string to a list of strings.
         """
-        i =0 
+        i = 0
         res = []
         while i < len(s):
             j = i
