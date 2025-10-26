@@ -1,18 +1,19 @@
-# Last updated: 10/13/2025, 10:25:07 PM
+# Last updated: 10/26/2025, 6:56:10 PM
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = [0] * 26
+        count = {}
         res = 0
-        left = 0
-        max_count = 0
+        maxf = 0
+        l = 0
 
         for i in range(len(s)):
-            index = ord(s[i])-65
-            count[index] +=1
-            max_count = max(max_count, count[index])
+            count[s[i]]= count.get(s[i],0) +1
+            maxf = max(maxf,count[s[i]])
 
-            while i-left+1 - max_count > k:
-                count[ord(s[left])-65] -=1
-                left +=1
-            res = max(res,i-left+1)
+            while (i-l+1) -maxf > k:
+                count[s[l]] -=1
+                l +=1
+
+
+            res = max(res,i-l+1)
         return res
