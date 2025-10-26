@@ -1,4 +1,4 @@
-# Last updated: 10/26/2025, 3:16:15 PM
+# Last updated: 10/26/2025, 3:21:59 PM
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         rows = defaultdict(set)
@@ -7,12 +7,14 @@ class Solution:
 
         for r in range(9):
             for c in range(9):
-                if board[r][c] == ".":
+                x = board[r][c]
+
+                if x == ".":
                     continue
-                if board[r][c] in rows[r] or board[r][c] in cols[c] or board[r][c] in squares[(r//3),(c//3)]:
+                if x in rows[r] or x in cols[c] or x in squares[(r//3),(c//3)]:
                     return False
                 
-                rows[r].add(board[r][c])
-                cols[c].add(board[r][c])
-                squares[(r//3),(c//3)].add(board[r][c])
+                rows[r].add(x)
+                cols[c].add(x)
+                squares[(r//3),(c//3)].add(x)
         return True
